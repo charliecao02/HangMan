@@ -10,7 +10,8 @@ public class Puzzle{
     private ArrayList<String> wordOnScreen=new ArrayList<String>();
     
     public Puzzle(){
-        word="test";
+        word="bruhmoment";
+        word=word.toUpperCase();
         length=word.length();
         for(int i=0;i<length;i++){
             wordOnScreen.add("_ ");

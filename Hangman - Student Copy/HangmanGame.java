@@ -12,6 +12,7 @@ public class HangmanGame {
             puzzle.show();
             System.out.print("\nMake a guess: ");
             String guess = scanner.nextLine();
+            guess=guess.toUpperCase();
             if (!puzzle.makeGuess(guess)) {
                 hangingMan.dieSomeMore();
             }
