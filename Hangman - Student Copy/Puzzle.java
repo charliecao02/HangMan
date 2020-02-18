@@ -8,9 +8,27 @@ public class Puzzle{
     private int length, amountGuessed=0;
     private String guesses="";
     private ArrayList<String> wordOnScreen=new ArrayList<String>();
+    private ArrayList<String> words;
     
     public Puzzle(){
-        word="bruhmoment";
+        words = new ArrayList<String>();
+
+        try {
+            File file = new File("words.txt");
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNext()) {
+                String tempWord = scanner.next().toUpperCase();
+                words.add(tempWord);
+            }
+            scanner.close();
+			
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        word=words.get((int)(Math.random()*words.size()));
+        
         word=word.toUpperCase();
         length=word.length();
         for(int i=0;i<length;i++){
